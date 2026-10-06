@@ -1,0 +1,244 @@
+/* FolioTone support site. System fonts only; no external resources. */
+:root {
+  color-scheme: light dark;
+  --accent: #007AFF;
+  --bg: #F2F2F7;
+  --card: #FFFFFF;
+  --text: #1C1C1E;
+  --secondary: #6C6C70;
+  --separator: #D1D1D6;
+  --code-bg: #F2F2F7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --accent: #0A84FF;
+    --bg: #000000;
+    --card: #1C1C1E;
+    --text: #F2F2F7;
+    --secondary: #AEAEB2;
+    --separator: #38383A;
+    --code-bg: #2C2C2E;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "PingFang SC", "Hiragino Sans GB",
+    "Helvetica Neue", Helvetica, Arial, "Microsoft YaHei", sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+main, header.site, footer.site {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+header.site {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding-top: 20px;
+  padding-bottom: 8px;
+}
+
+header.site .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: var(--text);
+  text-decoration: none;
+}
+
+header.site .brand img {
+  width: 32px;
+  height: 32px;
+  border-radius: 7px;
+}
+
+header.site .lang {
+  font-size: 15px;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover, a:focus-visible { text-decoration: underline; }
+
+h1 {
+  font-size: 32px;
+  line-height: 1.25;
+  margin: 24px 0 4px;
+}
+
+h2 {
+  font-size: 22px;
+  line-height: 1.3;
+  margin: 36px 0 8px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 24px 0 6px;
+}
+
+.meta {
+  color: var(--secondary);
+  font-size: 15px;
+  margin: 0 0 20px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 4px 20px;
+  margin: 16px 0;
+}
+
+.summary {
+  background: var(--card);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 14px 20px;
+  margin: 20px 0;
+}
+
+.summary p { margin: 6px 0; }
+
+ul { padding-left: 1.3em; }
+li { margin: 4px 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 15px;
+}
+
+th, td {
+  text-align: left;
+  vertical-align: top;
+  padding: 8px 10px 8px 0;
+  border-bottom: 1px solid var(--separator);
+}
+
+th { font-weight: 600; }
+
+/* Landing page */
+.hero {
+  text-align: center;
+  padding: 32px 0 8px;
+}
+
+.hero img {
+  width: 128px;
+  height: 128px;
+  border-radius: 28px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+}
+
+.hero h1 { margin-top: 20px; }
+
+.hero .tagline {
+  color: var(--secondary);
+  font-size: 19px;
+  margin: 4px 0 0;
+}
+
+.links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.links li {
+  margin: 0;
+  border-bottom: 1px solid var(--separator);
+}
+
+.links li:last-child { border-bottom: none; }
+
+.links a {
+  display: block;
+  padding: 14px 0;
+  font-weight: 500;
+}
+
+.links a span {
+  display: block;
+  color: var(--secondary);
+  font-weight: 400;
+  font-size: 15px;
+}
+
+/* FAQ */
+details.faq {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 0 20px;
+  margin: 10px 0;
+}
+
+details.faq summary {
+  cursor: pointer;
+  font-weight: 600;
+  padding: 14px 0;
+  list-style-position: outside;
+}
+
+details.faq[open] summary { border-bottom: 1px solid var(--separator); }
+details.faq > :last-child { margin-bottom: 14px; }
+
+/* Licenses */
+.component {
+  background: var(--card);
+  border-radius: 12px;
+  padding: 4px 20px 12px;
+  margin: 16px 0;
+}
+
+.component h3 { margin-top: 14px; }
+
+.component details { margin: 8px 0; }
+
+.component details summary {
+  cursor: pointer;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+pre.license {
+  background: var(--code-bg);
+  border-radius: 8px;
+  padding: 12px;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 12.5px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+footer.site {
+  color: var(--secondary);
+  font-size: 14px;
+  padding-top: 32px;
+  padding-bottom: 40px;
+}
+
+footer.site nav a { margin-right: 14px; }
+
+.center { text-align: center; }
+
+h2.subtitle { margin-top: 0; font-weight: 500; color: var(--secondary); }
+
+code { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: 0.88em; }
